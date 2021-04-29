@@ -6,17 +6,17 @@
 ### Install
 
 ```bash
-npm run install
+yarn
 ```
 
 ### Deploy mainnet
 
 ```bash
-npm run deploy:mainnet
+yarn run deploy:mainnet
 ```
 
 ### Deploy kovan
 
 ```bash
-npm run deploy:kovan
+yarn run deploy:kovan
 ```
