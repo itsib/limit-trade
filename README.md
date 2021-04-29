@@ -1,4 +1,4 @@
-# Index Order orders graph
+# Index Order graph
 
 - Mainnet: https://thegraph.com/explorer/subgraph/cryptninja/index_order
 - Rinkeby: https://thegraph.com/explorer/subgraph/cryptninja/index_order_kovan
