@@ -1,7 +1,7 @@
-# Hyper Limit orders graph
+# Index Order orders graph
 
-- Mainnet: https://thegraph.com/explorer/subgraph/plasma-finance/hyper_limit
-- Rinkeby: https://thegraph.com/explorer/subgraph/plasma-plasma/hyper_limit_rinkeby
+- Mainnet: https://thegraph.com/explorer/subgraph/cryptninja/index_order
+- Rinkeby: https://thegraph.com/explorer/subgraph/cryptninja/index_order_kovan
 
 ### Install
 
@@ -18,5 +18,5 @@ npm run deploy:mainnet
 ### Deploy rinkeby
 
 ```bash
-npm run deploy:rinkeby
+npm run deploy:kovan
 ```
