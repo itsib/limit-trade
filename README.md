@@ -1,7 +1,7 @@
 # Index Order graph
 
 - Mainnet: https://thegraph.com/explorer/subgraph/cryptninja/index_order
-- Rinkeby: https://thegraph.com/explorer/subgraph/cryptninja/index_order_kovan
+- Kovan: https://thegraph.com/explorer/subgraph/cryptninja/index_order_kovan
 
 ### Install
 
@@ -15,7 +15,7 @@ npm run install
 npm run deploy:mainnet
 ```
 
-### Deploy rinkeby
+### Deploy kovan
 
 ```bash
 npm run deploy:kovan
