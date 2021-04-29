@@ -1,7 +1,7 @@
 # Index Order graph
 
-- Mainnet: https://thegraph.com/explorer/subgraph/cryptninja/index_order
-- Kovan: https://thegraph.com/explorer/subgraph/cryptninja/index_order_kovan
+- Mainnet: https://thegraph.com/explorer/subgraph/cryptninja/indexs_order
+- Kovan: https://thegraph.com/explorer/subgraph/cryptninja/index_orders_kovan
 
 ### Install
 
