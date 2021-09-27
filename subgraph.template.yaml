@@ -6,10 +6,10 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: ERC20
-    network: {{network }}
+    network: {{network}}
     source:
       abi: ERC20
-      startBlock: {{ startBlock }}
+      startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.3
@@ -27,10 +27,10 @@ dataSources:
       file: ./src/handlers/ERC20.ts
   - kind: ethereum/contract
     name: HyperLimit
-    network: {{ network }}
+    network: {{network}}
     source:
       abi: HyperLimit
-      startBlock: {{ startBlock }}
+      startBlock: {{startBlock}}
       address: '{{address}}'
     mapping:
       kind: ethereum/events
