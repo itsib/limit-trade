@@ -24,7 +24,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleERC20Transfer
-      file: ./src/handlers/ERC20.ts
+      file: ./src/handlers/token.ts
   - kind: ethereum/contract
     name: HyperLimit
     network: {{network}}
@@ -48,4 +48,4 @@ dataSources:
           handler: handleOrderExecuted
         - event: OrderCancelled(indexed bytes32,address,address,address,bytes,uint256)
           handler: handleOrderCancelled
-      file: ./src/handlers/Order.ts
+      file: ./src/handlers/limit-order.ts

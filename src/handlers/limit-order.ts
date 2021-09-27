@@ -1,10 +1,8 @@
-import { log, BigInt, Address, ByteArray, Bytes, dataSource } from '@graphprotocol/graph-ts'
-
+import { Address, BigInt, ByteArray, Bytes, log } from '@graphprotocol/graph-ts'
+import { CANCELLED, EXECUTED, HYPER_LIMIT_ADDRESS, OPEN } from '../contants'
 import { Transfer } from '../entities/ERC20/ERC20'
-import { DepositETH, OrderExecuted, OrderCancelled, HyperLimit } from '../entities/HyperLimit/HyperLimit'
-
+import { DepositETH, HyperLimit, OrderCancelled, OrderExecuted } from '../entities/HyperLimit/HyperLimit'
 import { Order } from '../entities/schema'
-import { getAddressByNetwork, OPEN, CANCELLED, EXECUTED } from '../modules/Order'
 
 
 /**
@@ -68,7 +66,7 @@ export function handleOrderCreationByERC20Transfer(event: Transfer): void {
   let witness = '0x' + event.transaction.input.toHexString().substr(index.minus(BigInt.fromI32((64 * 2) - 24)).toI32(), 40)
   let data = Bytes.fromHexString('0x' + event.transaction.input.toHexString().substr(index.plus(BigInt.fromI32(64 * 2)).toI32(), 64 * 2)) as Bytes
 
-  let hyperLimit = HyperLimit.bind(getAddressByNetwork(dataSource.network()))
+  let hyperLimit = HyperLimit.bind(HYPER_LIMIT_ADDRESS)
 
   let order = new Order(
     hyperLimit.keyOf(

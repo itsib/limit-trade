@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "scripts": {
     "codegen": "graph codegen --debug --output-dir src/entities/",
-    "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
-    "prepare:matic": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
-    "prepare:kovan": "mustache config/kovan.json subgraph.template.yaml > subgraph.yaml",
-    "deploy:mainnet": "npm run prepare:mainnet && npx graph deploy --debug  --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/  cryptninja/orders-pl",
-    "deploy:kovan": "npm run prepare:kovan && npx graph deploy --debug  --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/  cryptninja/orders-pl-kovan"
+    "build": "graph build",
+    "prepare:mainnet": "mustache config/mainnet.json tmpl/subgraph.template.yaml > subgraph.yaml && mustache config/mainnet.json tmpl/constants.ts > src/contants.ts",
+    "prepare:matic": "mustache config/mainnet.json tmpl/subgraph.template.yaml > subgraph.yaml",
+    "prepare:kovan": "mustache config/kovan.json tmpl/subgraph.template.yaml > subgraph.yaml",
+    "deploy:mainnet": "npm run prepare:mainnet && graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ itsib/limit-trading",
+    "deploy:matic": "npm run prepare:matic && graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/  itsib/limit-trading-matic",
+    "deploy:kovan": "npm run prepare:kovan && graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ itsib/limit-trading-kovan"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.16.0",
@@ -16,10 +18,8 @@
     "@typescript-eslint/parser": "^2.0.0",
     "eslint": "^6.2.2",
     "eslint-config-prettier": "^6.1.0",
+    "mustache": "^4.2.0",
     "prettier": "^1.18.2",
     "typescript": "^3.5.2"
-  },
-  "dependencies": {
-    "mustache": "^4.2.0"
   }
 }

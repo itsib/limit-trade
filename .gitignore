@@ -31,3 +31,4 @@ public/
 
 subgraph.yaml
 src/entities/
+src/contants.ts
