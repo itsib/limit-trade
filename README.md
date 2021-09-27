@@ -1,7 +1,8 @@
 # Index Order graph
 
-- Mainnet: https://thegraph.com/explorer/subgraph/cryptninja/indexs_order
-- Kovan: https://thegraph.com/explorer/subgraph/cryptninja/index_orders_kovan
+- Mainnet: https://thegraph.com/legacy-explorer/subgraph/itsib/limit-trading
+- Polygon: https://thegraph.com/legacy-explorer/subgraph/itsib/limit-trading-matic
+- Kovan: https://thegraph.com/legacy-explorer/subgraph/itsib/limit-trading-kovan
 
 ### Install
 
@@ -13,6 +14,12 @@ npm i
 
 ```bash
 npm run run deploy:mainnet
+```
+
+### Deploy polygon
+
+```bash
+npm run run deploy:matic
 ```
 
 ### Deploy kovan
