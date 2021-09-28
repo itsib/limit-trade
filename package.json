@@ -4,12 +4,13 @@
   "scripts": {
     "codegen": "graph codegen --debug --output-dir src/entities/",
     "build": "graph build",
+    "create": "graph create limit-trading/matic --node https://sg.plasma.finance/deploy/",
     "prepare:mainnet": "mustache config/mainnet.json tmpl/subgraph.template.yaml > subgraph.yaml && mustache config/mainnet.json tmpl/constants.ts > src/contants.ts",
-    "prepare:matic": "mustache config/mainnet.json tmpl/subgraph.template.yaml > subgraph.yaml",
-    "prepare:kovan": "mustache config/kovan.json tmpl/subgraph.template.yaml > subgraph.yaml",
-    "deploy:mainnet": "npm run prepare:mainnet && graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ itsib/limit-trading",
-    "deploy:matic": "npm run prepare:matic && graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/  itsib/limit-trading-matic",
-    "deploy:kovan": "npm run prepare:kovan && graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ itsib/limit-trading-kovan"
+    "prepare:matic": "mustache config/matic.json tmpl/subgraph.template.yaml > subgraph.yaml && mustache config/matic.json tmpl/constants.ts > src/contants.ts",
+    "prepare:kovan": "mustache config/kovan.json tmpl/subgraph.template.yaml > subgraph.yaml && mustache config/kovan.json tmpl/constants.ts > src/contants.ts",
+    "deploy:mainnet": "npm run prepare:mainnet && graph deploy limit-trading/mainnet --ipfs https://sg.plasma.finance/ipfs/ --node https://sg.plasma.finance/deploy/",
+    "deploy:matic": "npm run prepare:matic && graph deploy limit-trading/matic --ipfs https://sg.plasma.finance/ipfs/ --node https://sg.plasma.finance/deploy/",
+    "deploy:kovan": "npm run prepare:kovan && graph deploy limit-trading/kovan --ipfs https://sg.plasma.finance/ipfs/ --node https://sg.plasma.finance/deploy/"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.16.0",

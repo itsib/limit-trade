@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Index-orders
-repository: https://github.com/cryptninja/index-orders
+repository: https://github.com/itsib/limit-trade
 schema:
   file: ./schema.graphql
 dataSources:
